@@ -55,7 +55,7 @@ class CrudController {
     return this.data;
   };
 
-  filterData = (key, match) => {
+  filterData = (key = "id", match) => {
     let filteredData = this.data.filter((state) => state[key] == match);
     return filteredData;
   };

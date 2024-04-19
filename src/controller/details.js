@@ -36,4 +36,10 @@ const deleteDetails = (req, res, next) => {
   res.status(200).send(data);
 };
 
-export default { createDetails, updateDetails, detailsData, deleteDetails };
+const findOneData = (req, res, next) => {
+  let id = +req.params.id;
+  let data = filterData("id", id);
+  res.status(200).send(data);
+};
+
+export default { createDetails, updateDetails, detailsData, deleteDetails, findOneData };
