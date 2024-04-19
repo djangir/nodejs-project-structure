@@ -2,16 +2,15 @@
 import { configDotenv } from "dotenv";
 import express from "express";
 import allRoutes from "./src/routers/index.js";
-
-// calls
 configDotenv();
 const app = express();
-// calls
 
-// variales
 const port = process.env.PORT;
-// variales
 
 app.use("/api/v1/", allRoutes);
+
+app.use((err, req, res, next) => {
+  res.status(err.status || 500).json(err.message || err);
+});
 
 app.listen(port, () => console.log("app listening on port " + port));
