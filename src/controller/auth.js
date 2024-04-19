@@ -30,10 +30,15 @@ const signup = (req, res, next) => {
 
 const login = (req, res, next) => {
   let userData = req.body;
-  let filteredData = filterData("userid", userData.userid);
+  let { userid, password } = userData;
+  let filteredData = filterData("userid", userid);
   filteredData = filteredData[0];
 
   if (!filteredData) {
+    return res.status(403).send("user not found");
+  }
+
+  if (password != filteredData.password) {
     return res.status(403).send("user not found");
   }
 

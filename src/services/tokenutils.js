@@ -9,7 +9,13 @@ const createToken = (data) => {
 };
 
 const validateToken = (token) => {
-  return jwt.verify(token, tokenSecret);
+  try {
+    let vtoken = jwt.verify(token, tokenSecret);
+    return vtoken.token;
+  } catch (e) {
+    console.log("token error");
+    return false;
+  }
 };
 
 export default { createToken, validateToken };
