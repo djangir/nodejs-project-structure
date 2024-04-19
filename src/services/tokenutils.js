@@ -1,6 +1,9 @@
+import env from "dotenv";
+env.config();
 import jwt from "jsonwebtoken";
 
-let tokenSecret = "asdfasfsdafasdf";
+let tokenSecret = process.env.TOKENSECRET;
+
 const createToken = (data) => {
   return jwt.sign(data, tokenSecret, { expiresIn: "1d" });
 };

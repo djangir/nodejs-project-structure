@@ -16,4 +16,4 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500).json(err.message || err);
 });
 
-app.listen(5300, () => console.log("app listening on port " + port));
+app.listen(port, () => console.log("app listening on port " + port));
