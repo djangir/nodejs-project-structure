@@ -2,10 +2,13 @@
 import { configDotenv } from "dotenv";
 import express from "express";
 import allRoutes from "./src/routers/index.js";
+
 configDotenv();
 const app = express();
 
 const port = process.env.PORT;
+
+app.use(express.json());
 
 app.use("/api/v1/", allRoutes);
 
