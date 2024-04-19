@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 let tokenSecret = "asdfasfsdafasdf";
 const createToken = (data) => {
-  return jwt.sign(data, tokenSecret);
+  return jwt.sign(data, tokenSecret, { expiresIn: "1d" });
 };
 
 const validateToken = (token) => {

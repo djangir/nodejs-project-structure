@@ -1,6 +1,12 @@
 import CrudController from "./crudController.js";
 import tokenutils from "../services/tokenutils.js";
-const data = [];
+const data = [
+  {
+    id: 1,
+    userid: "dinesh",
+    password: "1234",
+  },
+];
 
 const { createToken } = tokenutils;
 
@@ -30,8 +36,9 @@ const login = (req, res, next) => {
   if (!filteredData) {
     return res.status(403).send("user not found");
   }
-  let token = createToken(userData);
+
+  let token = createToken(filteredData);
   res.status(200).send({ token: token });
 };
 
-export default { signup, login };
+export default { signup, login, data };
