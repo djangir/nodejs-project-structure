@@ -3,7 +3,7 @@ import tokenutils from "../services/tokenutils.js";
 const data = [
   {
     id: 1,
-    userid: "dinesh",
+    userid: "user",
     password: "1234",
   },
 ];
