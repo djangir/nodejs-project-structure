@@ -11,7 +11,7 @@ const createToken = (data) => {
 const validateToken = (token) => {
   try {
     let vtoken = jwt.verify(token, tokenSecret);
-    return vtoken.token;
+    return vtoken;
   } catch (e) {
     console.log("token error");
     return false;
