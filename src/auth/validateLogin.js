@@ -1,6 +1,6 @@
 import tokenutils from "../services/tokenutils.js";
-import authController from "./auth.js";
-import CrudController from "./crudController.js";
+import authController from "./controller.js";
+import CrudController from "../controller/crudController.js";
 
 const { validateToken } = tokenutils;
 

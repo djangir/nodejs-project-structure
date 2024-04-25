@@ -1,8 +1,8 @@
 import express from "express";
-import locations from "./locations.js";
-import detailsRouter from "./details.js";
-import authRoutes from "./authRoutes.js";
-import validateLogin from "../controller/validateLogin.js";
+import locations from "../locations/locations.js";
+import detailsRouter from "../details/routes.js";
+import authRoutes from "../auth/routes.js";
+import validateLogin from "../auth/validateLogin.js";
 
 const allRoutes = express.Router();
 

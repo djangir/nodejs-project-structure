@@ -1,6 +1,6 @@
 import express from "express";
 import utils from "../services/validateData.js";
-import detailsController from "../controller/details.js";
+import detailsController from "./controller.js";
 const { validateIntParams } = utils;
 
 const { createDetails, updateDetails, detailsData, deleteDetails, findOneData } = detailsController;

@@ -1,4 +1,4 @@
-import CrudController from "./crudController.js";
+import CrudController from "../controller/crudController.js";
 import tokenutils from "../services/tokenutils.js";
 const data = [
   {

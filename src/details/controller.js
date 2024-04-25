@@ -1,4 +1,4 @@
-import CrudController from "./crudController.js";
+import CrudController from "../controller/crudController.js";
 
 const detailsDataList = [
   { id: 1, name: "test user", description: "test" },
