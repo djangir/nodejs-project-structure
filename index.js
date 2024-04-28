@@ -10,10 +10,10 @@ const port = process.env.PORT;
 
 app.use(express.json());
 
-app.use("/api/v1/", allRoutes);
+app.use("/api/v1", allRoutes);
 
 app.use((err, req, res, next) => {
-  res.status(err.status || 500).json(err.message || err);
+  res.status(err.status || 500).json(err.message || "Internal Server Error");
 });
 
 app.listen(port, () => console.log("app listening on port " + port));
