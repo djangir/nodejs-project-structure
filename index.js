@@ -7,9 +7,7 @@ configDotenv();
 const app = express();
 
 const port = process.env.PORT;
-
 app.use(express.json());
-
 app.use("/api/v1", allRoutes);
 
 app.use((err, req, res, next) => {
