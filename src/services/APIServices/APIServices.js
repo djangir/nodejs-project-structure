@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const duffelapiService = async (endpoint = "air/airports", id) => {
-  let accessToken = process.env.DUFFEL_ACCESS_TOKEN;
+const apiService = async (endpoint = "endpoint", id) => {
+  let accessToken = process.env.ACCESS_TOKEN;
 
-  let url = "https://api.duffel.com/";
+  let url = "url";
   url += endpoint;
   if (id) {
     url += `/${id}`;
@@ -17,7 +17,6 @@ const duffelapiService = async (endpoint = "air/airports", id) => {
     headers: {
       "Accept-Encoding": "gzip",
       Accept: "application/json",
-      "Duffel-Version": "v1",
       Authorization: `Bearer ${accessToken}`,
     },
   };
@@ -27,4 +26,4 @@ const duffelapiService = async (endpoint = "air/airports", id) => {
   return res.data;
 };
 
-export { duffelapiService };
+export { apiService };

@@ -1,8 +1,8 @@
-import { duffelapiService } from "../services/APIServices/APIServices.js";
+import { apiService } from "../services/APIServices/APIServices.js";
 
 const airports = async (req, res, next) => {
   let id = req?.params?.id;
-  const apiData = await duffelapiService(undefined, id);
+  const apiData = await apiService(undefined, id);
 
   return apiData;
 };
